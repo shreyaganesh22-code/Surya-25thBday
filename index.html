@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday, Surya! 🤍</title>
+    <style>
+        /* General Setup: Black & White Theme */
+        body {
+            /* Black background with a subtle dark texture */
+            background-color: #000000;
+            color: #ffffff; /* White text for contrast */
+            font-family: 'Georgia', serif; /* Elegant, classic font */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Full height of the viewport */
+            text-align: center;
+        }
+
+        /* Header Styling */
+        .header {
+            font-size: 3.5em; /* Large, prominent text */
+            font-weight: 700;
+            letter-spacing: 5px; /* Spacing for a more refined look */
+            margin-bottom: 80px;
+            text-transform: uppercase;
+        }
+        
+        /* Main Navigation Links Container */
+        .navigation-links {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Space between the main buttons */
+            margin-bottom: 50px;
+            width: 80%;
+            max-width: 450px; /* Controls the button width */
+        }
+
+        /* Styling for the Main Buttons */
+        .nav-button {
+            display: block;
+            padding: 18px 25px;
+            text-decoration: none; /* Removes underline */
+            color: #000000; /* Black text on white button */
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s ease; /* Smooth hover effect */
+        }
+
+        .nav-button:hover {
+            color: #ffffff; /* Text turns white */
+            background-color: transparent; /* Background becomes transparent */
+            border-color: #ffffff; /* White border remains */
+            transform: scale(1.05); /* Slightly enlarges on hover */
+            cursor: pointer;
+        }
+
+        /* Styling for the Surprise Link */
+        .surprise-link {
+            font-size: 0.9em;
+            color: #cccccc; /* Slightly grayed-out white */
+            text-decoration: none;
+            margin-bottom: 100px;
+            transition: color 0.3s ease;
+        }
+
+        .surprise-link:hover {
+            color: #ffffff; /* Turns pure white on hover */
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Footer Styling */
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1.1em;
+            font-style: italic;
+            border-top: 1px solid #444444; /* Thin gray line above footer */
+            padding-top: 15px;
+            color: #aaaaaa; /* Lighter gray for a subtle look */
+        }
+
+        /* Media Query for smaller screens (e.g., phones) */
+        @media (max-width: 600px) {
+            .header {
+                font-size: 2.5em;
+                margin-bottom: 60px;
+            }
+            .nav-button {
+                font-size: 1.1em;
+                padding: 15px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        Happy 25th Birthday Surya 🤍
+    </header>
+
+    <div class="navigation-links">
+        <a href="./reasons.html" class="nav-button">25 Reasons Why I Love You ❤️</a>
+        <a href="./next25.html" class="nav-button">Our Next 25 Years Together ⏳</a>
+        
+        <a href="./celebration.html" class="nav-button"> Celebrating You 🏋🏻</a>
+        
+        <a href="./letter.html" class="nav-button"> A Surprise Letter 💌</a>
+    </div>
+    
+    <footer class="footer">
+        Forever yours, Shreya ❤️
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Next 25 Years</title>
+    <style>
+        /* Define custom colors */
+        :root {
+            --accent-gold: #C7A775;    /* Subtle Gold */
+            --accent-silver: #A9A9A9; /* Muted Silver */
+            --bg-dark: #000;
+            --box-background: #1a1a1a; /* Dark box color */
+        }
+
+        /* BASE STYLES */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-dark);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden; 
+        }
+        
+        /* Navigation & Headers */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            /* Changed color properties to use the custom theme */
+            background-color: var(--accent-gold);
+            color: #000;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            z-index: 11;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 0 20px;
+            color: var(--accent-gold); /* Title in Gold */
+        }
+
+        /* TIMELINE STRUCTURE */
+        .timeline {
+            position: relative;
+            width: 90%; 
+            max-width: 700px; 
+            padding: 10px 0 50px 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        /* The main vertical line (LEFT ALIGNED) */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px; 
+            width: 2px;
+            background: var(--accent-silver); /* Line in Silver */
+            z-index: 1;
+        }
+
+        /* Individual Timeline Item */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding-left: 70px; 
+            z-index: 2;
+            text-align: left;
+        }
+        
+        /* Content Box - Removed Hyperlink styling */
+        .timeline-item-content {
+            padding: 20px;
+            background: var(--box-background); /* Dark box color */
+            border-radius: 8px;
+            display: inline-block;
+            max-width: 100%; 
+            box-sizing: border-box;
+            /* Removed hover effects, links, and cursor changes */
+            border: 1px solid rgba(169, 169, 169, 0.3); /* Subtle silver border */
+        }
+        
+        /* The Circle/Dot placed precisely on the vertical line */
+        .timeline-item-content::before {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: var(--accent-gold); /* Dot in Gold */
+            border-radius: 50%;
+            top: 25px; 
+            left: 44px; /* Aligned with the vertical line (50px - 6px dot radius) */
+            transform: translateY(0%);
+            z-index: 3;
+            border: 3px solid var(--bg-dark); /* Black border for visibility */
+        }
+        
+        /* Text Styling */
+        .timeline-item-content h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--accent-gold); /* Years in Gold */
+        }
+
+        .timeline-item-content p {
+            font-size: 0.95em;
+            margin: 0;
+            line-height: 1.5;
+            color: var(--accent-silver); /* Description in Silver */
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .timeline::before {
+                left: 20px; 
+            }
+            .timeline-item {
+                padding-left: 50px; 
+            }
+            .timeline-item-content::before {
+                left: 14px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html" class="home-button">🏠 Home</a>
+    <h1>⏳ Here’s How I See Our Forever</h1>
+
+    <ul class="timeline">
+        
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2025–2026</h2>
+                <p>You working in your dream company 🚀 + I complete CMA 🎓</p>
+                <p class="extra-line"> We start building our dreams side by side ✨</p>
+            </div>
+        </li>
+
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2027–2028</h2>
+                <p>We convince parents for our marriage 👫 + our wedding 💖</p> 
+                <p class="extra-line"> The moment our love becomes forever in front of the world ♾️</p>
+            </div>
+        </li>
+
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2029–2030</h2>
+                <p>You reach your dreams in aerospace, fitness & photography 💪 + we build our home with XY 🏡</p>
+                 <p class="extra-line">The years of happiness and love with playful fights, a cozy home, XY joining our team and seeing our parents hearts full of happiness 😌</p>
+            </div>
+        </li>
+
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2030–2035</h2>
+                <p>XX comes to our home + Traveling the world 🌍</p>
+                <p class="extra-line">The years are filled with a loving home, family adventures and raising XX and XY in the best way 💯 living the life we always dreamed of together 🤞🏻🧿</p>
+            </div>
+        </li>
+
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>After 2035 -♾️</h2>
+                <p>The quiet beautiful days ❤️</p>
+                <p class="extra-line">The years where our hearts are full living our 80 years dream with love, playfulness, intimacy and being there for each other for the rest of our lives ✨</p
+            </div>
+        </li>
+
+    </ul>
+
+</body>
+</html>

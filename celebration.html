@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrating You - Menu</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .home-button { position: fixed; top: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.15); color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 5px; z-index: 11; border: 1px solid rgba(255, 255, 255, 0.2); }
+        h1 { font-size: 3em; margin-bottom: 50px; color: #C7A775; /* Soft Gold */ }
+        .menu-grid { display: flex; gap: 40px; max-width: 900px; }
+        .menu-item {
+            flex: 1;
+            padding: 40px;
+            text-decoration: none;
+            color: #fff;
+            border: 2px solid #5C5C5C;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-size: 1.5em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.03); /* Very subtle background */
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            border-color: #C7A775; /* Soft Gold Highlight */
+            background: rgba(199, 167, 117, 0.1);
+        }
+        .menu-item span { display: block; margin-top: 10px; font-size: 0.7em; opacity: 0.8; font-weight: normal; }
+        @media (max-width: 768px) {
+            .menu-grid { flex-direction: column; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html" class="home-button">🏠 Home</a>
+    <h1> Celebrating Every Element of You, Surya ✨</h1>
+    <div class="menu-grid">
+        <a href="./celebration-stargazer.html" class="menu-item">
+            💡  His Best Equations
+            <span>(your passion and ambition)</span>
+        </a>
+        <a href="./celebration-puzzle.html" class="menu-item">
+            🔑 Surya's Code Breaker
+            <span>(An Intellectual Challenge)</span>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya's Code</title>
+    <style>
+        /* Define custom colors */
+        :root {
+            --accent-lavender: #D8BFD8; /* Soft Lavender */
+            --gold-color: #C7A775;      /* Soft Gold */
+            --bg-dark: #000;
+        }
+
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: var(--bg-dark);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .back-button { 
+            position: fixed; top: 20px; left: 20px; 
+            background: var(--accent-lavender); 
+            color: #000; padding: 10px 15px; 
+            text-decoration: none; border-radius: 5px; z-index: 11; font-weight: bold; 
+        }
+        .puzzle-section {
+            background: rgba(216, 191, 216, 0.05); 
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            border: 2px dashed var(--accent-lavender); 
+            box-shadow: 0 0 30px rgba(216, 191, 216, 0.4);
+        }
+        h2 { color: var(--gold-color); margin-bottom: 30px; font-size: 2.5em; }
+        .intro-text { margin-bottom: 30px; font-size: 1.1em; color: #ccc; }
+        
+        .clue-list { list-style: none; padding: 0; margin-bottom: 30px; font-size: 1.1em; text-align: left; }
+        .clue-list li { background: rgba(255, 255, 255, 0.05); padding: 15px; margin-bottom: 10px; border-left: 4px solid var(--accent-lavender); }
+        
+        #code-input { padding: 10px; font-size: 1.5em; width: 150px; text-align: center; border: 2px solid #5C5C5C; background: #222; color: var(--gold-color); border-radius: 5px; }
+        #reveal-button { padding: 10px 20px; font-size: 1.2em; margin-left: 20px; cursor: pointer; background: var(--accent-lavender); color: #000; border: none; border-radius: 5px; transition: background 0.3s ease; }
+        #puzzle-message { margin-top: 20px; font-size: 1.4em; color: #00CED1; /* Teal for the solution text */ min-height: 40px; }
+    </style>
+</head>
+<body>
+
+    <div class="puzzle-section">
+        <a href="./celebration.html" class="back-button">← Back to Menu</a>
+        <h2>🔑 Surya's Code Breaker</h2>
+        <p class="intro-text">Solve these three personal clues.</p>
+        
+        <ul class="clue-list">
+            <li>Clue 1 (The Legend's Constant) : The Portuguese legend's primary jersey number, multiplied by 3, then subtract 2.(2 digits)</li>
+            <li>Clue 2 (Interstellar) : The total count of letters in the main character's last name, multiplied by 1.5. (1 digit)</li>
+            <li>Clue 3 (Universal Force) :The number of fundamental forces that govern all physics and aerospace dynamics. (1 digit)</li>
+            <p style="margin-top: 20px; font-weight: bold;">(HINT: Clue 1 answer, then Clue 2 answer, then Clue 3 answer. FOUR-DIGIT CODE.)</p>
+        </ul>
+
+        <div>
+            <input type="text" id="code-input" placeholder="????">
+            <button id="reveal-button" onclick="checkCode()">REVEAL TRUTH</button>
+        </div>
+        
+        <p id="puzzle-message"></p>
+    </div>
+
+    <script>
+        // --- PUZZLE LOGIC ---
+        // FINAL CODE: 1994 (Clue 1=19, Clue 2=9, Clue 3=4)
+        const CORRECT_CODE = "1994"; 
+
+        function checkCode() {
+            const input = document.getElementById('code-input').value.trim();
+            const messageElement = document.getElementById('puzzle-message');
+
+            if (input === CORRECT_CODE) {
+                messageElement.style.color = '#00CED1';
+                messageElement.innerHTML = "CODE ACCEPTED! <br>You found the hint…now let’s solve life’s journey together❤️.Your surprise letter is waiting for you 💌";
+                document.getElementById('reveal-button').disabled = true;
+            } else {
+                messageElement.style.color = '#FF0000';
+                messageElement.textContent = "INCORRECT. Re-check the numbers! I know you can solve it.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Reasons Why I Love You, Surya</title>
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            overflow: hidden; 
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        /* Each Slide Item */
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out; 
+            z-index: 1;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Image Styling */
+        .slide img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Shows the full image */
+            opacity: 0.8; 
+        }
+
+        /* Text Overlay */
+        .reason-text-overlay {
+            position: relative; 
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            text-align: center; /* Centered alignment */
+            z-index: 3;
+            padding-bottom: 30px;
+            margin-bottom: 0vh; /* Pushes the text block up from the bottom */
+        }
+        
+        .reason-text-overlay p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 0 auto; /* Centers the paragraph block */
+            max-width: 700px; /* Limits the max width for large screens */
+            width: 90%; /* Ensures it doesn't spill over on smaller screens */
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: none;
+            padding: 15px 18px;
+            cursor: pointer;
+            font-size: 2em;
+            z-index: 10;
+            transition: background 0.3s ease, transform 0.3s ease;
+            outline: none;
+        }
+
+        .nav-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-arrow { left: 20px; border-radius: 5px 0 0 5px; }
+        .next-arrow { right: 20px; border-radius: 0 5px 5px 0; }
+
+        /* Slide Indicator (X / 25) */
+        .slide-indicator {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.1em;
+            z-index: 10;
+            letter-spacing: 1px;
+        }
+
+        /* Back to Home Button */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            z-index: 11;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .home-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .reason-text-overlay {
+                 padding: 20px;
+                 margin-bottom: 2vh; /* Adjust for smaller screens */
+            }
+            .reason-text-overlay p {
+                font-size: 1em;
+                padding: 0 15px;
+            }
+            .nav-arrow {
+                padding: 10px 12px;
+                font-size: 1.5em;
+            }
+            .prev-arrow { left: 10px; }
+            .next-arrow { right: 10px; }
+            .slide-indicator {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            .home-button {
+                padding: 8px 12px;
+                font-size: 0.9em;
+                top: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <a href="./index.html" class="home-button">🏠 Home</a>
+        <div class="slide-indicator">1 / 25</div>
+
+        <button class="nav-arrow prev-arrow" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="nav-arrow next-arrow" onclick="changeSlide(1)">&#10095;</button>
+
+        <div class="slide active">
+            <img src="images/reason1.jpg" alt="Photo of Surya and me on our first trip">
+            <div class="reason-text-overlay">
+                <p>I love you for always being your true self Surya...It makes me fall for you more and more every day 😚🤌🏻</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason2.jpg" alt="Photo of Surya laughing at the dinner table">
+            <div class="reason-text-overlay">
+                <p>I love how you can adapt to both traditional and western culture...I really admire this about you. From doing Sandhyavandanam without missing it to staying upto date with the latest trends you balance both worlds so effortlessly 💯</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason3.jpg" alt="Photo of us sharing an ice cream cone">
+            <div class="reason-text-overlay">
+                <p>I love your sense of humor and the way your body language expresses it so naturally...it can bring an instant smile on my face ❤️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason4.jpg" alt="Photo from a movie night at home">
+            <div class="reason-text-overlay">
+                <p>I love how passionate you are about your dreams and how your face lights up with a smile whenever you see a flight or anything related to your dreams 😍</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason5.jpg" alt="Photo of Surya reading a book">
+            <div class="reason-text-overlay">
+                <p>I admire how even through tough times you always stay positive...Your GRIT and confidence inspire me every day and make me feel so proud and lucky to have you as my aathukar 🥺❤️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason6.jpg" alt="Photo of our hands intertwined">
+            <div class="reason-text-overlay">
+                <p>I love how patiently you explain things to me without making me feel dumb even when I don’t understand 🙊</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason7.jpg" alt="Photo of Surya wearing a suit">
+            <div class="reason-text-overlay">
+                <p>Ufffff...your style is just❤‍🔥 you always pick the best contrasting combinations that give you the perfect look....whatever Surya does it always ends up being a banger in his style💯</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason8.jpg" alt="Photo of us under the stars">
+            <div class="reason-text-overlay">
+                <p>I love how comfortable and safe I feel with you....You help me explore every side of myself(from growth to sex) YOU ARE THE ONE WHO BROUGHT THE BEST IN ME...I love you more than I love myself because you’ve helped me discover who I truly am ❤️✨</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason9.jpg" alt="Photo of Surya making coffee">
+            <div class="reason-text-overlay">
+                <p>I love how you dive deep into everything whether it’s starting a new habit or hobby you always do the full groundwork before stepping in ❤‍🔥</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason10.jpg" alt="Photo of a bouquet of flowers">
+            <div class="reason-text-overlay">
+                <p>I love how much you love nature...seeing a sunset while driving on ECR, watching the moonrise, sunrise or the golden skies from your window in Toulouse instantly brings a huge smile on your face(which i love the most) and lifts your mood 😍</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason11.jpg" alt="Photo from our trip to the mountains">
+            <div class="reason-text-overlay">
+                <p>I love how hot and sexy my aathukar is 🤤🤌🏻 your booty, chest and thighs make me crave you every single moment</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason12.jpg" alt="Photo of a home-cooked meal">
+            <div class="reason-text-overlay">
+                <p>I love the goofy faces you make on video calls they always make me laugh no matter what 😂❤️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason13.jpg" alt="Photo of Surya working on his laptop">
+            <div class="reason-text-overlay">
+                <p>I love the way you smile biting your lower lip...one look and my whole mood can change 🤌🏻🤌🏻 That smile makes me feel I can do anything to keep it on your face ❤️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason14.jpg" alt="Photo of us hiking on a trail">
+            <div class="reason-text-overlay">
+                <p>I love how you always motivate me to grow and push me out of my comfort zone 💯(even during your toughtest times you always stood for me to break my fear...thats how you value my growth) </p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason15.jpg" alt="Photo of a shared inside joke moment">
+            <div class="reason-text-overlay">
+                <p>Ahhh...I love our little moments the slow and juicy kisses on your lower lips...you holding my idupu and rubbing your dick with my booty in back hug...me giving smoochies on your cheeks and us feeling closer just watching the moon together 🤍</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason16.jpg" alt="Photo of a hand-written note from Surya">
+            <div class="reason-text-overlay">
+                <p>I love your confidence, your comebacks, your energy...woah ❤‍🔥 no one can ever match it 💯💯</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason17.jpg" alt="Photo of us relaxing on a couch">
+            <div class="reason-text-overlay">
+                <p>I love the way you get lost in your own world staring at your Real Madrid posters...it's perfectly you 🤍</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason18.jpg" alt="Photo of Surya playing his favorite sport or hobby">
+            <div class="reason-text-overlay">
+                <p>I love how you can connect with anyone whether it’s a little kid or someone of our age or even elders....You can start a conversation so effortlessly and make people laugh no matter their age....It’s such a special quality that you have which makes everyone feel so comfortable around you ❤️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason19.jpg" alt="A close-up photo of Surya smiling">
+            <div class="reason-text-overlay">
+                <p>I love the way you look into my eyes it makes me feel so special and deeply loved every single moment ❤️🤌🏻</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason20.jpg" alt="Photo of us walking in the city">
+            <div class="reason-text-overlay">
+                <p>I love how playful you are with me...pinching my boobs while driving...finding out which bra I'm wearing and teasing in ways that makes me laugh 😂❤️...I want us to stay the same forever (for 80 years) ✨</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason21.jpg" alt="Photo of a beautiful sunrise/sunset">
+            <div class="reason-text-overlay">
+                <p>I love how excited you are about being a dad to our xx and xy and raising them (mainly for xy)....Uff 🤤🤤🤌🏻just look at this picture there couldn’t be anyone else who’d be both hotter and smarter as a dad than you...Our xx and xy are truly so lucky ❤‍🔥❤‍🔥</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason22.jpg" alt="Photo of us looking into the distance">
+            <div class="reason-text-overlay">
+                <p>I love how you make me feel so close when you hold my hips and look into my eyes 🤌🏻🤌🏻 I want that moment forever ♾️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason23.jpg" alt="Photo of a meaningful location for us">
+            <div class="reason-text-overlay">
+                <p>I love how from the beginning until now you’ve been there for me in all my happy and sad moments....You complete me everyday and I love you so much na ❣️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason24.jpg" alt="Photo of a warm embrace">
+            <div class="reason-text-overlay">
+                <p>I love the way you change when you go near the bed Surya 🤌😚your voice turns soft, your mood shifts and our intimate, erotic talks feel so special...our us time....everyday i wait for it and I adore this side of you completely 😚❤️</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/reason25.jpg" alt="Our favorite photo together">
+            <div class="reason-text-overlay">
+                <p>I love how being with you makes my life better in every way...helping me grow, shaping who I am now and changes in me physically and emotionally....You make me feel loved and understood in every moment Surya...I want to give my entire self to you and make you feel loved...I can’t imagine living without you... It’s not about the time we’ve had but the impact you’ve made on my life...I want to love you more, make you feel at home and build our family with xx and xy....I want us to grow old together be there for each other for the rest of our lives and make all our dreams come true ❤️</p>
+            </div>
+        </div>
+
+
+        </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const slideIndicator = document.querySelector('.slide-indicator');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        // Function to update slide and indicator
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            slideIndicator.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        // Function to change slide
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+
+        // Swipe gestures for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swiped left
+                changeSlide(1);
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Swiped right
+                changeSlide(-1);
+            }
+        }
+
+        // Initialize slider on load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (totalSlides > 0) {
+                updateSlider();
+            }
+        });
+    </script>
+</body>
+</html>

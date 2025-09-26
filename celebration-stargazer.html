@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stargazer Dashboard</title>
+    <style>
+        /* Define custom colors for easy changes later */
+        :root {
+            --accent-silver: #A9A9A9; /* Muted Silver for Borders/Accents */
+            --gold-color: #C7A775;    /* Soft Gold for Titles/Highlights */
+            --bg-dark: #000;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-dark);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Navigation Buttons */
+        .back-button { 
+            position: fixed; top: 20px; left: 20px; 
+            background: var(--accent-silver); 
+            color: #000; padding: 10px 15px; 
+            text-decoration: none; border-radius: 5px; z-index: 11; font-weight: bold; 
+            transition: background 0.3s;
+        }
+        .back-button:hover { background: #fff; }
+
+        /* Header and Intro Text */
+        h1 { 
+            font-size: 2.5em; margin-top: 80px; margin-bottom: 20px; 
+            color: var(--gold-color); 
+        }
+        
+        /* Dashboard Container - Wider for better display */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1100px; 
+            width: 95%; 
+            padding: 20px 0;
+        }
+
+        /* Central Star Map/Aerospace Display */
+        .main-display { 
+            width: 100%; height: 500px; 
+            /* FIXED PATH: Added './' for reliable local and hosted image loading */
+            background: url('./images/starmap-26-09-2000.jpg') no-repeat center center/cover; 
+            border: 2px solid var(--accent-silver); 
+            border-radius: 10px; margin-bottom: 30px; position: relative; 
+            box-shadow: 0 0 20px rgba(169, 169, 169, 0.4); 
+        }
+        
+        /* New Caption Style */
+        .caption-text {
+            font-size: 0.9em;
+            color: var(--accent-silver); 
+            text-align: center;
+            margin-top: -20px; 
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        /* Three-Panel Grid */
+        .data-panels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            width: 100%;
+            margin-top: 20px;
+        }
+        .panel { 
+            background: rgba(169, 169, 169, 0.05); 
+            padding: 20px; border-radius: 10px; text-align: center; 
+            border: 1px solid var(--accent-silver); 
+            box-shadow: 0 0 8px rgba(169, 169, 169, 0.2);
+        }
+        .panel h3 { 
+            color: var(--gold-color); margin-top: 0; font-size: 1.4em; 
+        }
+        
+        /* Media Sizing: Makes the images/videos BIGGER */
+        .panel img, .panel video { 
+            width: 100%; 
+            height: auto; 
+            max-height: 350px; 
+            border-radius: 5px; margin-top: 10px; object-fit: cover; 
+            border: 1px solid var(--gold-color); 
+        }
+        .panel p { 
+            font-size: 1em; line-height: 1.5; 
+        }
+    </style>
+</head>
+<body>
+    <a href="./celebration.html" class="back-button">← Back to Menu</a>
+    
+    <h1>His Best Equations ✨</h1>
+
+    <div class="dashboard">
+        <div class="main-display">
+            </div>
+        
+        <p class="caption-text">The night sky on the day My Aathukar was born 🤍</p>
+        
+        <div class="data-panels">
+            
+            <div class="panel">
+                <h3>AMBITION & DRIVE 🚀</h3>
+                <p>The boy who spoke about his aerospace dream in a childhood school speech finally realized that ambition ❤️‍🔥 The mixed emotions of happiness, excitement and a little anxiety of his lifelong goal achieved is clearly visible in his eyes.</p>
+                <video controls autoplay muted loop src="./images/graduation-clip.mp4" alt="Surya's Graduation Video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="panel">
+                <h3>DISCIPLINE & EFFORT 💪</h3>
+                <p>Surya’s transformation journey is the true example of consistency and discipline. No one can ever be like him… Fitness = love for Surya. Despite everything he went through this year he never stopped. Every single time he makes a comeback with pure GRIT and strength ❤️‍🔥 For him exploring his mental toughness isn’t just part of the journey..it’s what he loves the most 💯</p>
+                <video controls autoplay muted loop src="./images/fitness-clip.mp4" alt="Surya's Fitness Video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="panel">
+                <h3>CHRONICLE OF JOY 💙</h3>
+                <p>One of his recent happiest moments…Dec 10, 2024 coming back to India after 15 long months.He returned with pure joy and that moment will always remain so special ❤️✨</p>
+                <img src="./images/surya-return-dec2024.jpg" alt="Surya's Return to India Dec 10, 2024">
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
